@@ -8,7 +8,7 @@ using UnityEngine;
 public enum eCardState
 {
 	drawpile,
-	tableu,
+	tableau,
 	target,
 	discard
 }

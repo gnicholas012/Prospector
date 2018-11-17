@@ -67,8 +67,6 @@ public class Layout: MonoBehaviour
 			tSD.y = float.Parse(slotsX[i].att("y"));
 			tSD.layerID = int.Parse(slotsX[i].att("layer"));
 			tSD.layerName = sortingLayerNames[tSD.layerID];
-			print("tSD.layerID: " + tSD.layerID);
-					print("Layer name " + tSD.layerName);
 
 			switch(tSD.type)
 			{
@@ -82,7 +80,6 @@ public class Layout: MonoBehaviour
 
 						foreach(string s in hiding)
 						{
-							print("Hidden by " + s);
 							tSD.hiddenBy.Add(int.Parse(s));
 						}
 					}
@@ -92,14 +89,10 @@ public class Layout: MonoBehaviour
 				case "drawpile":
 					tSD.stagger.x = float.Parse(slotsX[i].att("xstagger"));
 					drawPile = tSD;
-					print("tSD.layerID: " + tSD.layerID);
-					print("Layer name " + tSD.layerName);
 					break;
 
 				case "discardpile":
 					discardPile = tSD;
-					print("tSD.layerID: " + tSD.layerID);
-					print("Layer name " + tSD.layerName);
 					break;
 			}
 		}
