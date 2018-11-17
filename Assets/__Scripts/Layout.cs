@@ -50,10 +50,8 @@ public class Layout: MonoBehaviour
 		SlotDef tSD;
 		PT_XMLHashList slotsX = xml["slot"];
 
-		print("slotsX.Count: " + slotsX.Count);
 		for(int i = 0; i < slotsX.Count; i++)
 		{
-			print("card i: " + i);
 			tSD = new SlotDef();
 
 			if(slotsX[i].HasAtt("type"))
@@ -68,10 +66,9 @@ public class Layout: MonoBehaviour
 			tSD.x = float.Parse(slotsX[i].att("x"));
 			tSD.y = float.Parse(slotsX[i].att("y"));
 			tSD.layerID = int.Parse(slotsX[i].att("layer"));
-			print("tSD.layerID: " + tSD.layerID);
-
 			tSD.layerName = sortingLayerNames[tSD.layerID];
-			print("Layer name " + tSD.layerName);
+			print("tSD.layerID: " + tSD.layerID);
+					print("Layer name " + tSD.layerName);
 
 			switch(tSD.type)
 			{
@@ -95,10 +92,14 @@ public class Layout: MonoBehaviour
 				case "drawpile":
 					tSD.stagger.x = float.Parse(slotsX[i].att("xstagger"));
 					drawPile = tSD;
+					print("tSD.layerID: " + tSD.layerID);
+					print("Layer name " + tSD.layerName);
 					break;
 
 				case "discardpile":
 					discardPile = tSD;
+					print("tSD.layerID: " + tSD.layerID);
+					print("Layer name " + tSD.layerName);
 					break;
 			}
 		}
